@@ -1,0 +1,33 @@
+<img src="../images/cheeseburger.JPEG" alt="Cheeseburger in Paradise">
+<div id="div1">
+  <h2>Eat these burgers!</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block newDevoured=true}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+</div>
+<div id="div2">
+  <h2 style=>Yum!</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          <li>{{burger_name}}</li>
+        {{/if}}
+      {{/each}}
+    </ul>
+</div>
+<div id="form">
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="bu">Burger name:</label>
+    <input type="text" id="bu" name="burger_name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+</div>
